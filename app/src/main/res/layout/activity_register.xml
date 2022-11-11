@@ -49,7 +49,7 @@
         android:id="@+id/reg_email"
         android:layout_width="230dp"
         android:layout_height="43dp"
-        android:autofillHints="name"
+        android:autofillHints="emailAddress"
         android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,7 +63,7 @@
         android:id="@+id/reg_pass"
         android:layout_width="230dp"
         android:layout_height="43dp"
-        android:autofillHints="name"
+        android:autofillHints="password"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -74,12 +74,14 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="492dp">
+        app:layout_constraintBottom_toTopOf="@+id/register_user"
+        app:layout_constraintTop_toBottomOf="@+id/reg_pass"
+        tools:layout_editor_absoluteX="-30dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -88,7 +90,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvRegisterHere"
+            android:id="@+id/loginhere"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -110,6 +112,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_pass"
         app:layout_constraintVertical_bias="0.271" />
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        tools:ignore="MissingConstraints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
